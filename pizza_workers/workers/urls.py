@@ -16,8 +16,10 @@ Including another URLconf
 """
 
 from django.urls import path
-from .views import workers
+from . import views
 
 urlpatterns = [
-    path('', workers)
+    path('', views.get_workers),
+    path('<int:id_worker>', views.get_one_worker, name='one-worker')
+
 ]

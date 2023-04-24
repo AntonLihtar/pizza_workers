@@ -26,4 +26,4 @@ class Worker(models.Model):
     salary = models.IntegerField('Зарплата', default=0)
 
     def __str__(self):
-        return f'{self.id}: {self.title}-{self.last_name}: {self.telephone}'
+        return f'{self.id}: {self.title}-{self.surname} {self.name}'

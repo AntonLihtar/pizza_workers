@@ -6,5 +6,11 @@
 </head>
 <body>
 <h1>TEST</h1>
+<ul>
+    {% for worker in workers %}
+
+    <li><a href="{% url 'one-worker' worker.id %}">{{ worker }}</a></li>
+    {% endfor %}
+</ul>
 </body>
 </html>
