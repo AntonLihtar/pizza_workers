@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'workers'
+    'workers',
+    'tow_trucks.apps.TowTrucksConfig',
 ]
 
 MIDDLEWARE = [
