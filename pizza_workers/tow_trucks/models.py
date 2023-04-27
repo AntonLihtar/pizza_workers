@@ -33,7 +33,7 @@ class Car(models.Model):
     age = models.IntegerField(validators=[MinValueValidator(2010), MaxValueValidator(2023)])
     document = models.OneToOneField(Doc, on_delete=models.CASCADE)
     drivers = models.ManyToManyField(Driver, blank=True)
-    garage = models.ForeignKey(Garage, on_delete=models.CASCADE, null=True, blank=True)
+    garage = models.ForeignKey(Garage, on_delete=models.SET(1), null=True, blank=True)
 
     def __str__(self):
         return f'{self.name}'
