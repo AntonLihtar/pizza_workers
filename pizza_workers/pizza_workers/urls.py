@@ -16,8 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from .views import index
-
+from .views import index, get_date
 
 admin.site.site_header = 'Админка'
 admin.site.index_title = 'Управление'
@@ -26,5 +25,6 @@ urlpatterns = [
     path('', index),
     path('admin/', admin.site.urls),
     path('workers/', include('workers.urls')),
-    path('cars/', include('tow_trucks.urls'))
+    path('cars/', include('tow_trucks.urls')),
+    path('<int:mon>/<int:day>', get_date)
 ]

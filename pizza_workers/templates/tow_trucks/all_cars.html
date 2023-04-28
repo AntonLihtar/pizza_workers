@@ -5,11 +5,20 @@
     <title>Cars</title>
 </head>
 <body>
-  <h1>Cars</h1>
-  <ul>
-{% for car in cars %}
-  <li>{{ car }}</li>
-{% endfor %}
-    </ul>
+<h1>Cars</h1>
+<ul>
+    {% for car in cars %}
+    <li>{{ car }}</li>
+    <li>Документ: <br> - {{ car.document.name }} {{ car.document.number }}</li>
+
+    <li>Водители: {% for dr in car.drivers.all %}
+        <br> - {{ dr.name }}
+        {% endfor %}
+    </li>
+    <hr>
+    {% endfor %}
+
+
+</ul>
 </body>
 </html>
