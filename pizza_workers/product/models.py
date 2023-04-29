@@ -10,7 +10,7 @@ class Product(models.Model):
     doc = models.TextField(null=True, blank=True)
 
     def __str__(self):
-        return f'{self.name}'
+        return f'{self.name}: {self.price}'
 
     def get_absolute_url(self):
         pass
