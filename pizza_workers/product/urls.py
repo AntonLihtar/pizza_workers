@@ -16,8 +16,9 @@ Including another URLconf
 """
 
 from django.urls import path
-from .views import get_all_products
+from .views import get_all_products, get_one_product
 
 urlpatterns = [
     path('', get_all_products),
+    path('<int:id_product>', get_one_product, name='get-product'),
 ]

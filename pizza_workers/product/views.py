@@ -1,5 +1,5 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 
 from .generator_names import create_name
 from .models import Product
@@ -27,3 +27,8 @@ def get_all_products(request):
     # create_bd()  # активировав метод добавим записи в таблицу
     products = Product.objects.all()
     return render(request, 'product/products.html', {'products': products})
+
+
+def get_one_product(request, id_product):
+    product = get_object_or_404(Product, id=id_product)
+    return render(request, 'product/product.html', {'product': product})
